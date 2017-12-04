@@ -10,6 +10,6 @@ namespace ZabolNET.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FacultyID { get; set; }
         public string FacultyName { get; set; }
-        public List<Course> Courses { get; set; }
+        public virtual List<Course> Courses { get; set; }
     }
 }

@@ -13,8 +13,9 @@ namespace ZabolNET.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int YearID { get; set; }
         public int StartYear { get; set; }
-        public Course Course { get; set; }
-        public List<Group> Groups { get; set; }
-        public List<Subject> Subject { get; set; }
+        //public virtual Course Course { get; set; }
+        public int CourseID { get; set; }
+        public virtual List<Group> Groups { get; set; }
+        public virtual List<Subject> Subject { get; set; }
     }
 }

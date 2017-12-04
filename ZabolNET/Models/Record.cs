@@ -12,9 +12,11 @@ namespace ZabolNET.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RecordID { get; set; }
-        public Group Group { get; set; }
-        public DateTime RecordDate { get; set; }
-        public Subject Subject { get; set; }
+        //public virtual Group Group { get; set; }
+        public int GroupID { get; set; }
+        public virtual DateTime RecordDate { get; set; }
+        //public virtual Subject Subject { get; set; }
+        public int SubjectID { get; set; }
         public string Description { get; set; }
         public string ShortDescription { get; set; }
         public string RecordType { get; set; }

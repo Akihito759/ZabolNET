@@ -172,6 +172,14 @@
     <Compile Include="Migrations\201712041204494_daneDodane.Designer.cs">
       <DependentUpon>201712041204494_daneDodane.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712041723281_virtualne.cs" />
+    <Compile Include="Migrations\201712041723281_virtualne.Designer.cs">
+      <DependentUpon>201712041723281_virtualne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041730491_objektyUsuniete.cs" />
+    <Compile Include="Migrations\201712041730491_objektyUsuniete.Designer.cs">
+      <DependentUpon>201712041730491_objektyUsuniete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Faculty.cs" />
@@ -320,6 +328,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712041204494_daneDodane.resx">
       <DependentUpon>201712041204494_daneDodane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041723281_virtualne.resx">
+      <DependentUpon>201712041723281_virtualne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041730491_objektyUsuniete.resx">
+      <DependentUpon>201712041730491_objektyUsuniete.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

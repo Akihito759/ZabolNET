@@ -20,6 +20,7 @@ namespace ZabolNET.Controllers
             var z = db.Faculties.Include(s => s.Courses).ToList();
             //var u = db.Faculties.Include(t => t.Courses);
             //var x = db.Faculties.ToList();
+            var y = db.Courses.Where(m => m.FacultyID == 1).ToList();
             return View(z);
         }
 
