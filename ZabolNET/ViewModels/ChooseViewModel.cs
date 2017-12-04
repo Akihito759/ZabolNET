@@ -12,5 +12,6 @@ namespace ZabolNET.ViewModels
         public Faculty Faculty { get; set; }
         public Group Group { get; set; }
         public Course Course { get; set; }
+        public List<string> ToChoose { get; set; }
     }
 }

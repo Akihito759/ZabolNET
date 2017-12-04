@@ -29,6 +29,11 @@ namespace ZabolNET.Controllers
 
 
         public ActionResult AddEvent()
+        {          
+            return View();
+        }
+
+        public ActionResult Choose()
         {
             return View();
         }

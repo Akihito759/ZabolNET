@@ -2,12 +2,41 @@
     ViewBag.Title = "Home Page";
 }
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-@{Html.RenderPartial("~/Views/Intro/_ChooseGroup.cshtml");}
+<div>
+   
+    <div class="row">
+    <div class="col-sm-1"></div>    
+    <div class="col-sm-4">
+        <div style="background-color: aqua; margin: 10px; border: solid; margin:10px; padding: 5px; align-content: space-around">
+            <text>
+                Witajcie na platformie zrzeszającej oraz pomagającej studentom! Naszym celem było stworzenie aplikacji,
+                która pomoże Wam, studentom, w ciężkich czasach nauki!
+            </text>
+            </div>
+        </div>
+    <div class="col-sm-6">
+        <div style="background-color: aqua; margin: 10px; border: solid; margin:10px">
+            <h1 style="text-align: center">Weilei <i class="fa fa-book"></i></h1>
+            <ul>
+                <li><text>Przejrzysty interfejs</text></li>
+                <li><text>Łatwość użytkowania</text></li>
+                <li><text>Zawsze będziesz wiedział co Cię czeka</text></li>
+                <li><text>Późny powrót z imprezy? Nie musisz szukać informacji po fejsie!</text></li>
+            </ul>
+        </div>
+    <div  style="background-color: aqua; margin: 10px; border: solid; margin:10px">
+        <h3 style="text-align: center">Autorzy</h3>
+        <ul>
+            <li><text>Grzegorz Gruby Cudok</text></li>
+            <li><text>inni</text></li>
 
+        </ul>
+    </div>
+    </div>
+    <div class="col-sm-1"></div>
 
-@Html.BeginForm("", "", FormMethod.Post)
-{ 
-
-}
+    </div>
+</div>
