@@ -1,7 +1,7 @@
 ﻿@model ZabolNET.ViewModels.ChooseViewModel
 
 @*<link href="~/Content/Site.css" rel="stylesheet" />*@
-<div>
+<div class="partial">
     <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
@@ -10,14 +10,12 @@
         <div class="col-sm-3"></div>
     </div>
 
-    @{
-        Model.Course = "chuj";
-    }
+
     <div class="row">
         <div class="col-sm-3"> </div>
-        <div class="col-sm-6 partial" style="text-align:center;">
+        <div class="col-sm-6" style="text-align:center;">
 
-            @using(Html.BeginForm("ChooseCourse", "FirstRun", FormMethod.Post, new { @id = "chuj" }))
+            @using (Html.BeginForm("ChooseCourse", "FirstRun", FormMethod.Post, new { @id = "chuj" }))
             {
                 @Html.HiddenFor(m => m.Course)
                 @Html.HiddenFor(m => m.Faculty)
@@ -32,30 +30,31 @@
                         <li style="height: 10px"></li>
                     }
                 </ul>
+
             }
-                
+            <button class="testowy"></button>
             
 
             </div>
             <div class="col-sm-3"> </div>
         </div>
+    <script type="text/javascript">
+     
+
+    $(".wtf").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("ChooseCourse", "FirstRun")",
+            data: $("#chuj").serialize() + "&choosenFaculty=" + $(this).val(),
+            success: function (data) {
+                
+                $(".partial").html(data); //the HTML I returned from the controller
+            },
+            error: function (errorData) { onError(errorData); }
+        });
+    });
+</script>
     </div>
 
 
-<script type="text/javascript">
-
-    $("#wtf").click(function (e) {
-        e.preventDefault();
-        $.ajax({
-                    type: "GET",
-                    url: "@Url.Action("ChooseCourse", "FirstRun")",
-                    data: $("#chuj").serialize(),
-                    success: function (data) {
-                        alert("Pojebało ? ");
-                        //$(".partial").html(data); //the HTML I returned from the controller
-                    },
-                    error: function (errorData) { onError(errorData); }
-                });
-    })
-
-</script>

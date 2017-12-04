@@ -9,6 +9,7 @@ namespace ZabolNET.Controllers
 {
     public class FirstRunController : Controller
     {
+
         //GET Intro/chooseFaculty
         public ActionResult Faculty()
         {
@@ -37,7 +38,27 @@ namespace ZabolNET.Controllers
 
             viewModel.ToChoose = courseList;
 
-            return PartialView("~/Views/Intro/_ChooseCourse.cshtml", viewModel);
+            return PartialView("~/Views/Intro/_ChooseFaculty.cshtml", viewModel);
+        }
+
+        public ActionResult ChooseYear(ChooseViewModel viewModel, string choosenFaculty)
+        {
+            //var _facLIst = db.Faculties.Select(x => x.FacultyName).ToList();
+            viewModel.Course = choosenFaculty;
+
+            List<string> courseList = null;
+            if (choosenFaculty == "AEI")
+            {
+                courseList = new List<string> { "AiR", "Infa" };
+            }
+            if (choosenFaculty == "IB")
+            {
+                courseList = new List<string> { "dupa", "Damian" };
+            }
+
+            viewModel.ToChoose = courseList;
+
+            return PartialView("~/Views/Intro/_ChooseFaculty.cshtml", viewModel);
         }
     }
 }

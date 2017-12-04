@@ -1,30 +1,60 @@
 ﻿@model ZabolNET.ViewModels.ChooseViewModel
 
-
-<div style="height: 100%">
+@*<link href="~/Content/Site.css" rel="stylesheet" />*@
+<div class="partial">
     <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
-            <h2 style="text-align:center" class="TextStyle">Wybierz swoją grupę</h2>
+            <h2 style="margin: 30px;text-align:center; animation: ease-in" class="TextStyle">Wybierz swój wydział</h2>
         </div>
         <div class="col-sm-3"></div>
     </div>
 
 
     <div class="row">
-        <div class="col-sm-2"> </div>
-        <div class="col-sm-8" style="text-align:center" >
-            <ul style="list-style-type:none;">
-            @if (Model != null)
-            {
-               foreach (var el in Model.ToChoose)
-               {
-                <li style="border: dashed"><button type="button" class="btn btn-primary btn-block">@el</button></li>
-               }
-            }
-            </ul>
-        </div>
-        <div class="col-sm-2"> </div>
+        <div class="col-sm-3"> </div>
+        <div class="col-sm-6" style="text-align:center;">
 
+            @using (Html.BeginForm("ChooseCourse", "FirstRun", FormMethod.Post, new { @id = "chuj" }))
+            {
+                @Html.HiddenFor(m => m.Course)
+                @Html.HiddenFor(m => m.Faculty)
+                @Html.HiddenFor(m => m.Group)
+                @Html.HiddenFor(m => m.Year)
+
+                <ul style="list-style-type: none;">
+
+                    @foreach (var el in Model.ToChoose)
+                    {
+                        <li><button type="submit" style="background-color: #00708C; font-size: 24px; color: white" class="btn btn-block wtf" name="choosenFaculty" form="chuj" value="@el">@el</button></li>
+                        <li style="height: 10px"></li>
+                    }
+                </ul>
+
+            }
+            <button class="testowy"></button>
+
+
+        </div>
+        <div class="col-sm-3"> </div>
     </div>
+    <script type="text/javascript">
+
+
+    $(".wtf").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("ChooseCourse", "FirstRun")",
+            data: $("#chuj").serialize() + "&choosenFaculty=" + $(this).val(),
+            success: function (data) {
+
+                $(".partial").html(data); //the HTML I returned from the controller
+            },
+            error: function (errorData) { onError(errorData); }
+        });
+    });
+    </script>
 </div>
+
+
