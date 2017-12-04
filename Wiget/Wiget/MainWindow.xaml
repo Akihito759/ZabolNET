@@ -1,0 +1,57 @@
+﻿<Window x:Class="Wiget.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wiget"
+        xmlns:ViewModel ="clr-namespace:Wiget.ViewModel"
+        xmlns:Views ="clr-namespace:Wiget.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="300" WindowStyle="None"
+        WindowState="Normal"
+        >
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5"/>
+    </WindowChrome.WindowChrome>
+    <Window.DataContext>
+        <ViewModel:MainViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <local:BooleanToCollapsedConverter x:Key="VisibilityConv"/>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Rectangle Fill="#D53736" HorizontalAlignment="Stretch" Height="25" VerticalAlignment="Top" PreviewMouseDown="Rectangle_PreviewMouseDown"/>
+            <Button  x:Name="Btnclose" Content="x" HorizontalAlignment="Right" VerticalAlignment="Top" Width="35" Height="25" Command="{Binding ExitCommand}"/>
+        </Grid>
+        
+        <Grid Grid.Row="1" Width="auto">
+            <Viewbox Stretch="Uniform" StretchDirection="Both">
+            <Views:DetailsView Visibility="{Binding DetailsViewEnabled,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay,Converter={StaticResource VisibilityConv}}" Width="200" Height="100"/>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="1"  >
+            <Viewbox>
+            <Views:GroupPickView Visibility="{Binding GroupViewEnabled,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay,Converter={StaticResource VisibilityConv}}" />
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="1" >
+            <Viewbox>
+                <Views:PlanView Visibility="{Binding PlanViewEnabled,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay, Converter={StaticResource VisibilityConv}}"/>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="2" Visibility="{Binding IsButtonVisible,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource VisibilityConv}}">
+            <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding PreviousCommand}" Content="Dalej" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="30"/>
+            <Button Command="{Binding NextCommand}" Content="Dalej" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="30"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</Window>
