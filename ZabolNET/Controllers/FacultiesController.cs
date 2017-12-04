@@ -17,6 +17,8 @@ namespace ZabolNET.Controllers
         // GET: Faculties
         public ActionResult Index()
         {
+            var z = db.Faculties.Include(s => s.Courses);
+            var u = db.Faculties.Include(t => t.Courses);
             var x = db.Faculties.ToList();
             return View(db.Faculties.ToList());
         }

@@ -37,8 +37,10 @@ textarea {
     display: inline-block;
     font-size: 16px;
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
-} 
-
+}
+.w3-lobster {
+    font-family: "Lobster", serif;
+}
 
 .TextStyle {
     font-weight: 800;
