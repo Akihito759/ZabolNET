@@ -1,4 +1,4 @@
-﻿@model List<ZabolNET.Models.Faculty>
+﻿@model List<string>
  
    <div>
         <div class="row">
@@ -16,7 +16,7 @@
                 <ul style="list-style-type:none; border: dashed">
                     @foreach (var el in Model)
                     {
-                        <li><button type="button" class="btn btn-primary btn-block">@el.FacultyName</button></li>
+                        <li><button type="button" class="btn btn-primary btn-block">@el</button></li>
                     }
                 </ul>
             </div>
