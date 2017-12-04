@@ -9,9 +9,10 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ComboBox Grid.Row="1" Width="80"/>
+        <TextBlock Grid.Row="0" Grid.RowSpan="2" Text="Wybierz swoją grupę" Foreground="#D53736" Width="auto" FontSize="40" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
+        <ComboBox Grid.Row="2" Width="100" Height="40"/>
     </Grid>
 </UserControl>

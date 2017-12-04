@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Wiget.Event;
+using Wiget.Model;
 
 namespace Wiget.ViewModel
 {
     public class DetailsViewModel:BaseViewModel
     {
         private List<string> _faculty = new List<string>();
-        private List<string> _courses = new List<string>();
+        private ObservableCollection<string> _courses = new ObservableCollection<string>();
         private List<int> _years = new List<int>();
 
+        
         private string _selectedFaculty;
         public List<string> Faculty
         {
@@ -34,12 +38,34 @@ namespace Wiget.ViewModel
             set
             {
                 _selectedFaculty = value;
+                
+                _aggregator.GetEvent<SendInfoToGetGroupFaculty>().Publish(SelectedFaculty);
+                if (SelectedFaculty == "AEiI")
+                {
+                    Courses.Clear();
+                    Courses.Add("AiR");
+                    Courses.Add("Makrokierunek");
+                    Courses.Add("Elektrotecghnika");
+                }
+                if (SelectedFaculty == "IB")
+                {
+                    Courses.Clear();
+                    Courses.Add("Inżynieria biomedyczna");
+
+                }
+                if (
+                    SelectedFaculty == "MT - Muzyczno - Taneczny")
+                {
+                    Courses.Clear();
+                    Courses.Add("Nanotechnologia");
+                    Courses.Add("AiR");
+                }
                 NotifyPropertyChanged();
             }
         }
 
         private string _selectedCourse;
-        public List<string> Courses
+        public ObservableCollection<string> Courses
         {
             get
             {
@@ -60,11 +86,17 @@ namespace Wiget.ViewModel
             set
             {
                 _selectedCourse = value;
+                _aggregator.GetEvent<SendInfoToGetGroupCourse>().Publish(SelectedCourse);
+                
+               
+                Years.Add(2017);
+                Years.Add(2016);
+                Years.Add(2015);
                 NotifyPropertyChanged();
             }
         }
 
-        private string _selectedYear;
+        private int _selectedYear;
         public List<int> Years
         {
             get
@@ -77,7 +109,7 @@ namespace Wiget.ViewModel
                 NotifyPropertyChanged();
             }
         }
-        public string SelectedYear
+        public int SelectedYear
         {
             get
             {
@@ -87,6 +119,7 @@ namespace Wiget.ViewModel
             {
                 _selectedYear = value;
                 NotifyPropertyChanged();
+                _aggregator.GetEvent<SendInfoToGetGroupYear>().Publish(SelectedYear);
             }
         }
 
@@ -96,9 +129,15 @@ namespace Wiget.ViewModel
         {
             Faculty = new List<string>();
             Years = new List<int>();
-            Courses = new List<string>();
+            Courses = new ObservableCollection<string>();
             Faculty.Add("AEiI");
             Faculty.Add("IB");
+            Faculty.Add("MT - Muzyczno - Taneczny");
+
+
+            _aggregator.GetEvent<SendInfoToGetGroupFaculty>().Publish(SelectedFaculty);
+            _aggregator.GetEvent<SendInfoToGetGroupCourse>().Publish(SelectedCourse);
+            _aggregator.GetEvent<SendInfoToGetGroupYear>().Publish(SelectedYear);
         }
     }
 }

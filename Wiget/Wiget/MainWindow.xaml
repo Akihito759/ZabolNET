@@ -11,7 +11,7 @@
         Title="MainWindow" Height="350" Width="300" WindowStyle="None"
                       ShowTitleBar="False"
                       ShowIconOnTitleBar="False"
-                      ShowCloseButton="False"
+                      
                       ShowMinButton="False"
                       ShowMaxRestoreButton="False"
         ResizeMode="NoResize"
@@ -26,31 +26,31 @@
         <local:BooleanToCollapsedConverter x:Key="VisibilityConv"/>
     </Window.Resources>
 
-    <Grid>
+    <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <Rectangle Fill="#D53736" HorizontalAlignment="Stretch" Height="25" VerticalAlignment="Top" PreviewMouseDown="Rectangle_PreviewMouseDown"/>
-            <Button  x:Name="Btnclose" Content="x" HorizontalAlignment="Right" VerticalAlignment="Top" Width="35" Height="25" Command="{Binding ExitCommand}"/>
-            <Button  x:Name="Btnconfig" Content="x" HorizontalAlignment="Right" VerticalAlignment="Top" Width="35" Height="25" Command="{Binding ExitCommand}"/>
+            <Rectangle Fill="#D53736" HorizontalAlignment="Stretch" Height="30" VerticalAlignment="Top" PreviewMouseDown="Rectangle_PreviewMouseDown"/>
+            <!--<Button  x:Name="Btnclose" Content="x" HorizontalAlignment="Right" VerticalAlignment="Top" Width="35" Height="25" Command="{Binding ExitCommand}"/>-->
+            <!--<Button  x:Name="Btnconfig" Content="x" HorizontalAlignment="Right" VerticalAlignment="Top" Width="35" Height="25" Command="{Binding ExitCommand}"/>-->
         </Grid>
 
-        <Grid Grid.Row="1" Width="auto">
+        <Grid  Grid.Row="1" Width="auto" Visibility="{Binding DetailsViewEnabled,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay,Converter={StaticResource VisibilityConv}}"  IsEnabled="{Binding DetailsViewEnabled}">
             <Viewbox Stretch="Uniform" StretchDirection="Both">
-                <Views:DetailsView Visibility="{Binding DetailsViewEnabled,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay,Converter={StaticResource VisibilityConv}}" Width="200" Height="100"/>
+                <Views:DetailsView Width="200" Height="100"/>
             </Viewbox>
         </Grid>
-        <Grid Grid.Row="1"  >
-            <Viewbox>
-                <Views:GroupPickView Visibility="{Binding GroupViewEnabled,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay,Converter={StaticResource VisibilityConv}}" />
-            </Viewbox>
+        <Grid Grid.Row="1" Visibility="{Binding GroupViewEnabled,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay,Converter={StaticResource VisibilityConv}}"  >
+            
+                <Views:GroupPickView Width="auto" Height="auto"/>
+            
         </Grid>
-        <Grid Grid.Row="1" >
+        <Grid Grid.Row="1" Visibility="{Binding PlanViewEnabled,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay, Converter={StaticResource VisibilityConv}}" >
             <Viewbox>
-                <Views:PlanView Visibility="{Binding PlanViewEnabled,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay, Converter={StaticResource VisibilityConv}}"/>
+                <Views:PlanView />
             </Viewbox>
         </Grid>
         <Grid Grid.Row="2" Visibility="{Binding IsButtonVisible,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource VisibilityConv}}">
