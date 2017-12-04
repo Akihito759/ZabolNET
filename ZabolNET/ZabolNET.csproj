@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -142,10 +148,36 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FacultiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\ZabolNETInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712041105051_firstUpdate.cs" />
+    <Compile Include="Migrations\201712041105051_firstUpdate.Designer.cs">
+      <DependentUpon>201712041105051_firstUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041118367_dbSetsAdded.cs" />
+    <Compile Include="Migrations\201712041118367_dbSetsAdded.Designer.cs">
+      <DependentUpon>201712041118367_dbSetsAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041154354_SeedAdded.cs" />
+    <Compile Include="Migrations\201712041154354_SeedAdded.Designer.cs">
+      <DependentUpon>201712041154354_SeedAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041204494_daneDodane.cs" />
+    <Compile Include="Migrations\201712041204494_daneDodane.Designer.cs">
+      <DependentUpon>201712041204494_daneDodane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\Faculty.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\Record.cs" />
+    <Compile Include="Models\Year.cs" />
+    <Compile Include="Models\Subject.cs" />
+    <Compile Include="DAL\ZabolNETContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -185,10 +217,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Faculties\Create.cshtml" />
+    <Content Include="Views\Faculties\Delete.cshtml" />
+    <Content Include="Views\Faculties\Details.cshtml" />
+    <Content Include="Views\Faculties\Edit.cshtml" />
+    <Content Include="Views\Faculties\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -202,6 +238,20 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712041105051_firstUpdate.resx">
+      <DependentUpon>201712041105051_firstUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041118367_dbSetsAdded.resx">
+      <DependentUpon>201712041118367_dbSetsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041154354_SeedAdded.resx">
+      <DependentUpon>201712041154354_SeedAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041204494_daneDodane.resx">
+      <DependentUpon>201712041204494_daneDodane.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
