@@ -6,7 +6,7 @@ using ZabolNET.Models;
 
 namespace ZabolNET.DAL
 {
-    public class ZabolNETInitializer: System.Data.Entity.DropCreateDatabaseIfModelChanges<ZabolNETContext>
+    public class ZabolNETInitializer: System.Data.Entity.CreateDatabaseIfNotExists<ZabolNETContext>
     {
         protected override void Seed(ZabolNETContext context)
         {
