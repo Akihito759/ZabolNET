@@ -6,14 +6,14 @@ using ZabolNET.Models;
 
 namespace ZabolNET.DAL
 {
-    public class ZabolNETInitializer: System.Data.Entity.DropCreateDatabaseIfModelChanges<ZabolNETContext>
+    public class ZabolNETInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ZabolNETContext>
     {
         protected override void Seed(ZabolNETContext context)
         {
             var _faculties = new List<Faculty>
             {
                 new Faculty()
-                {   
+                {
                     Courses =
                     {
                         new Course()
@@ -39,12 +39,12 @@ namespace ZabolNET.DAL
                                                     SubjectName = "BDM"
                                                 }
                                             },
-                                          
+
                                             Records = new List<Record>()
                                             {
                                                 new Record()
                                                 {
-                                                 
+
                                                     Description = "Działania na kolekcjach, listy, stosy, kolejki",
                                                     RecordDate = DateTime.Now.AddDays(1),
                                                     RecordType = "kartkówka",
@@ -52,7 +52,7 @@ namespace ZabolNET.DAL
                                                 },
                                                 new Record()
                                                 {
-                                                
+
                                                     Description = "Tworzenie bazy danych, dodawanie i modyfikacja rekordów bazy danych w szpitalu",
                                                     RecordDate = DateTime.Now.AddDays(1),
                                                     RecordType = "kolokwium",
@@ -75,3 +75,5 @@ namespace ZabolNET.DAL
         }
     }
 }
+
+//przepraszam
