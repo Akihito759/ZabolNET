@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 using ZabolNET.Models;
 
 namespace ZabolNET.Controllers
@@ -13,15 +14,11 @@ namespace ZabolNET.Controllers
     public class FacultiesController : Controller
     {
         private ZabolNETContext db = new ZabolNETContext();
-        
+        //Course _course = new Course();
         // GET: Faculties
         public ActionResult Index()
-        {   
-            var z = db.Faculties.Include(s => s.Courses).ToList();
-            //var u = db.Faculties.Include(t => t.Courses);
-            //var x = db.Faculties.ToList();
-            var y = db.Courses.Where(m => m.FacultyID == 1).ToList();
-            return View(z);
+        {
+            return View();
         }
 
         // GET: Faculties/Details/5

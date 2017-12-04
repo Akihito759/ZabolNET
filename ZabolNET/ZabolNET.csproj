@@ -150,6 +150,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\FacultiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\ZabolNETInitializer.cs" />
@@ -179,6 +180,10 @@
     <Compile Include="Migrations\201712041730491_objektyUsuniete.cs" />
     <Compile Include="Migrations\201712041730491_objektyUsuniete.Designer.cs">
       <DependentUpon>201712041730491_objektyUsuniete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041747366_yearID.cs" />
+    <Compile Include="Migrations\201712041747366_yearID.Designer.cs">
+      <DependentUpon>201712041747366_yearID.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
@@ -312,7 +317,9 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Api\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
@@ -334,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712041730491_objektyUsuniete.resx">
       <DependentUpon>201712041730491_objektyUsuniete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041747366_yearID.resx">
+      <DependentUpon>201712041747366_yearID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
