@@ -13,5 +13,6 @@ namespace ZabolNET.ViewModels
         public string Group { get; set; }
         public string Course { get; set; }
         public List<string> ToChoose { get; set; }
+        public string Txt { get; set; } = "Wybierz wydział";
     }
 }
