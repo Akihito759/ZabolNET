@@ -8,10 +8,10 @@ namespace ZabolNET.ViewModels
 {
     public class ChooseViewModel
     {
-        public Year Year { get; set; }
-        public Faculty Faculty { get; set; }
-        public Group Group { get; set; }
-        public Course Course { get; set; }
+        public int Year { get; set; }
+        public string Faculty { get; set; }
+        public string Group { get; set; }
+        public string Course { get; set; }
         public List<string> ToChoose { get; set; }
     }
 }

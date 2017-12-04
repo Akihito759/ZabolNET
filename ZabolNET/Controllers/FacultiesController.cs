@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
 using ZabolNET.Models;
+using ZabolNET.ViewModels;
 
 namespace ZabolNET.Controllers
 {
@@ -45,8 +46,32 @@ namespace ZabolNET.Controllers
         //GET Intro/chooseFaculty
         public ActionResult ChooseFaculty()
         {
-            var _facLIst = db.Faculties.Select(x => x.FacultyName).ToList();
-            return PartialView("~/Views/Intro/_ChooseFaculty.cshtml", _facLIst);
+            //var _facLIst = db.Faculties.Select(x => x.FacultyName).ToList();
+            var facultiesList = new List<string> { "AEI", "IB" };
+            var viewModel = new ChooseViewModel
+            {
+                ToChoose = facultiesList
+            };
+            return PartialView("~/Views/Intro/_ChooseFaculty.cshtml", viewModel);
+        }
+
+        public ActionResult ChooseCourse(ChooseViewModel viewModel,string faculty)
+        {
+            //var _facLIst = db.Faculties.Select(x => x.FacultyName).ToList();
+            viewModel.Faculty = faculty;
+            List<string> courseList=null;
+            if (faculty == "AEI")
+            {
+                courseList = new List<string> { "AiR", "Infa" };
+            }
+            if(faculty == "IB")
+            {
+                courseList = new List<string> { "dupa", "Damian" };
+            }
+
+            viewModel.ToChoose = courseList;
+
+            return PartialView("~/Views/Intro/_ChooseFaculty.cshtml", viewModel);
         }
 
         // POST: Faculties/Create
