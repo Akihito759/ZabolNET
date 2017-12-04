@@ -181,6 +181,7 @@
     <Compile Include="Models\Subject.cs" />
     <Compile Include="DAL\ZabolNETContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AddEventViewModel.cs" />
     <Compile Include="_ZabolNETContext_20171204113926DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
