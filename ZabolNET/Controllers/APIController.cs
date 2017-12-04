@@ -16,7 +16,7 @@ namespace ZabolNET.Controllers
         {
             // GET: Api
             private ZabolNETContext db = new ZabolNETContext();
-
+            //
             //Course _course = new Course();
             // GET: Faculties
             public String GetFacultyJs()
@@ -24,6 +24,7 @@ namespace ZabolNET.Controllers
                 var faculties = db.Faculties.Select(x => x.FacultyName).ToList();
                 return JsonConvert.SerializeObject(faculties);
             }
+
             public String GetCoursesJs(string facultyName)
             {
                 var id = db.Faculties.Where(f => f.FacultyName == facultyName).Select(f => f.FacultyID).First();
