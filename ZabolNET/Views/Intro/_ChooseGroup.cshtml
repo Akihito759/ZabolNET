@@ -1,4 +1,6 @@
-﻿
+﻿@model ZabolNET.ViewModels.ChooseViewModel
+
+
 <div style="height: 100%">
     <div class="row">
         <div class="col-sm-3"></div>
@@ -13,11 +15,13 @@
         <div class="col-sm-2"> </div>
         <div class="col-sm-8" style="text-align:center" >
             <ul style="list-style-type:none;">
-                <li> <button type="button" class="btn btn-primary btn-block">Grupa 1</button></li>
-                <li> <button type="button" class="btn btn-primary btn-block">Grupa 2</button></li>
-                <li> <button type="button" class="btn btn-primary btn-block">Grupa 3</button></li>
-                <li> <button type="button" class="btn btn-primary btn-block">Grupa 4</button></li>
-                <li> <button type="button" class="btn btn-primary btn-block">Grupa 5</button></li>
+            @if (Model != null)
+            {
+               foreach (var el in Model.Year.Groups)
+               {
+                <li style="border: dashed"><button type="button" class="btn btn-primary btn-block">@el.GroupName</button></li>
+               }
+            }
             </ul>
         </div>
         <div class="col-sm-2"> </div>
