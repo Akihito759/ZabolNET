@@ -85,6 +85,9 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -146,9 +149,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.ApplicationInsights">
       <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
@@ -175,9 +175,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\FacultiesController.cs" />
     <Compile Include="Controllers\FirstRunController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\GetDataInfo.cs" />
     <Compile Include="DAL\ZabolNETInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -209,6 +211,10 @@
     <Compile Include="Migrations\201712041747366_yearID.cs" />
     <Compile Include="Migrations\201712041747366_yearID.Designer.cs">
       <DependentUpon>201712041747366_yearID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712042311421_123.cs" />
+    <Compile Include="Migrations\201712042311421_123.Designer.cs">
+      <DependentUpon>201712042311421_123.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
@@ -324,7 +330,6 @@
     <Content Include="Views\Intro\_ChooseYear.cshtml" />
     <Content Include="Views\Intro\_ChooseFaculty.cshtml" />
     <Content Include="Views\Intro\_ChooseCourse.cshtml" />
-    <Content Include="Views\Intro\_ChooseGroup.cshtml" />
     <Content Include="Views\Faculties\Create.cshtml" />
     <Content Include="Views\Faculties\Delete.cshtml" />
     <Content Include="Views\Faculties\Details.cshtml" />
@@ -345,6 +350,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Intro\_ChooseGroup.cshtml" />
+    <Content Include="Views\Intro\_Final.cshtml" />
     <None Include="_ZabolNETContext_20171204113926DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>_ZabolNETContext_20171204113926DataSet.Designer.cs</LastGenOutput>
@@ -382,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712041747366_yearID.resx">
       <DependentUpon>201712041747366_yearID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712042311421_123.resx">
+      <DependentUpon>201712042311421_123.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

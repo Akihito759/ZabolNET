@@ -1,11 +1,10 @@
 ﻿@model ZabolNET.ViewModels.ChooseViewModel
 
 @*<link href="~/Content/Site.css" rel="stylesheet" />*@
-<div class="partial">
     <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
-            <h2 style="margin: 30px;text-align:center; animation: ease-in" class="TextStyle">Wybierz swój wydział</h2>
+            <h2 style="margin: 30px;text-align:center; animation: ease-in" class="TextStyle">Wybierz swój rok</h2>
         </div>
         <div class="col-sm-3"></div>
     </div>
@@ -45,7 +44,7 @@
         e.preventDefault();
         $.ajax({
             type: "GET",
-            url: "@Url.Action("ChooseCourse", "FirstRun")",
+            url: "@Url.Action("ChooseGroup", "FirstRun")",
             data: $("#chuj").serialize() + "&choosenFaculty=" + $(this).val(),
             success: function (data) {
 
@@ -55,6 +54,6 @@
         });
     });
     </script>
-</div>
+
 
 
