@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "AddEvent";
+}
+
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h2 class="TextStyle">Dodaj wydarzenie</h2> <br /><br /><br />
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-4">
+                <b><h4 class="TextStyle">Przedmiot</h4></b>
+            </div>
+            <div class="col-sm-8">
+                <select class="form-control" id="sel1">
+                    <option value="" disabled selected>Wybierz przedmiot</option>
+                    <option>Podstawy automatyki</option>
+                    <option>Dynamika układów</option>
+                    <option>Przetwrzanie cyfrowe obrazów</option>
+                    <option>4</option>
+                </select>
+            </div>
+        </div><br />
+
+        <div class="row">
+            <div class="col-sm-4">
+                <b><h4 class="TextStyle">Data</h4></b>
+            </div>
+            <div class="col-sm-8">
+                DATA PICKER
+            </div>
+        </div><br />
+
+        <div class="row">
+            <div class="col-sm-4">
+                <b><h4 class="TextStyle">Krótki opis</h4></b>
+            </div>
+            <div class="col-sm-8">
+                <textarea class="form-control" id="comment" style="max-width: 100%; width:99%;" maxlength="80" placeholder="Dodaj krótki opis..."></textarea>
+            </div>
+        </div><br />
+
+        <div class="row">
+            <div class="col-sm-4">
+                <b><h4 class="TextStyle">Wybierz</h4></b>
+            </div>
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label style="font-size: x-large;"><input type="checkbox" value="" style="zoom: 1.5;">Kartkówka</label><br />
+                        <label style="font-size: x-large;"><input type="checkbox" value="" style="zoom: 1.5;">Kolokwium</label><br />
+                        <label style="font-size: x-large;"><input type="checkbox" value="" style="zoom: 1.5;">Egzamin</label><br />
+                    </div>
+                    <div class="col-sm-6">
+                        <label style="font-size: x-large;"><input type="checkbox" value="" style="zoom: 1.5;">Wejściówka</label><br />
+                        <label style="font-size: x-large;"><input type="checkbox" value="" style="zoom: 1.5;">Zadanie</label><br />
+                    </div>
+                </div>
+
+            </div>
+        </div><br />
+
+        <div class="row">
+            <div class="col-sm-4">
+                <b><h4 class="TextStyle">Trudność</h4></b>
+            </div>
+            <div class="col-sm-8">
+                <select class="form-control" id="sel1">
+                    <option value="" disabled selected>Wybierz trudność</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+        </div><br />
+
+        <div class="row">
+            <div class="col-sm-4">
+                <b><h4 class="TextStyle">Opis</h4></b>
+            </div>
+            <div class="col-sm-8">
+                <textarea class="form-control" id="comment" rows="10" style="max-width: 100%; width:99%;"  placeholder="Dodaj krótki opis..."></textarea>
+            </div>
+        </div><br />
+
+
+
+
+
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+
+
+
