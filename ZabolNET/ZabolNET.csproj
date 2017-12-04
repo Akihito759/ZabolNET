@@ -286,6 +286,7 @@
     <Content Include="_ZabolNETContext_20171204113926DataSet.xsc">
       <DependentUpon>_ZabolNETContext_20171204113926DataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="Views\Home\Choose.cshtml" />
     <None Include="_ZabolNETContext_20171204113926DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>_ZabolNETContext_20171204113926DataSet.Designer.cs</LastGenOutput>
@@ -294,7 +295,6 @@
     <Content Include="_ZabolNETContext_20171204113926DataSet.xss">
       <DependentUpon>_ZabolNETContext_20171204113926DataSet.xsd</DependentUpon>
     </Content>
-
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -303,7 +303,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

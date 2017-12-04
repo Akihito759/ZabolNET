@@ -33,6 +33,11 @@ namespace ZabolNET.Controllers
             return View();
         }
 
+        public ActionResult Choose()
+        {
+            return View();
+        }
+
 
     }
 }
