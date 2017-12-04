@@ -27,8 +27,8 @@ textarea {
 .MaxContainer {
     max-width: 100%;
 }
-.button {   
-    background-color: #00708C; /* Green */
+.button {
+    background-color: #00708C !important; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -36,6 +36,7 @@ textarea {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 } 
 
 
