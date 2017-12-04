@@ -15,7 +15,7 @@ namespace ZabolNET.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your apdfhhdfhdfdhf ion page.";
+            ViewBag.Message = "Your aki kurwa ion page.";
 
             return View();
         }
@@ -26,5 +26,13 @@ namespace ZabolNET.Controllers
 
             return View();
         }
+
+
+        public ActionResult AddEvent()
+        {
+            return View();
+        }
+
+
     }
 }

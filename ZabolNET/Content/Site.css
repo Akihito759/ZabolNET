@@ -22,3 +22,14 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+.MaxContainer {
+    max-width: 100%;
+}
+
+
+.TextStyle {
+    font-weight: 800;
+    font-size: xx-large;
+}
