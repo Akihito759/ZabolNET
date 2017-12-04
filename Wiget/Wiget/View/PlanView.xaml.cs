@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Wiget.ViewModel;
 
 namespace Wiget.View
 {
@@ -23,6 +24,7 @@ namespace Wiget.View
         public PlanView()
         {
             InitializeComponent();
+           // DataContext = new DetailsViewModel();
         }
     }
 }

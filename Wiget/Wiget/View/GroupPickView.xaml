@@ -7,6 +7,11 @@
              mc:Ignorable="d" 
             >
     <Grid>
-        <Button Content="SIEMA"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ComboBox Grid.Row="1" Width="80"/>
     </Grid>
 </UserControl>

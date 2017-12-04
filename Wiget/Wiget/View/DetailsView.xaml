@@ -20,9 +20,9 @@
             <Label Content="Rok: "/>
         </StackPanel>
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-            <ComboBox Width="50" ItemsSource="{Binding Faculty}"  IsSynchronizedWithCurrentItem="True"/>
-            <ComboBox Width="50"/>
-            <ComboBox Width="50"/>
+            <ComboBox Width="80" ItemsSource="{Binding Faculty}" SelectedItem="{Binding SelectedFaculty}" IsSynchronizedWithCurrentItem="True" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="0 0 20 0"/>
+            <ComboBox Width="80" ItemsSource="{Binding Courses}" SelectedItem="{Binding SelectedCourse}" IsSynchronizedWithCurrentItem="True" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="0 0 20 0"/>
+            <ComboBox Width="80" ItemsSource="{Binding Years}" SelectedItem="{Binding SelectedYear}"  IsSynchronizedWithCurrentItem="True" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="0 0 20 0"/>
         </StackPanel>
     </Grid>
 </UserControl>

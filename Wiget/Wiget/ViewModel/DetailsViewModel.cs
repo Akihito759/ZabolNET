@@ -9,7 +9,10 @@ namespace Wiget.ViewModel
     public class DetailsViewModel:BaseViewModel
     {
         private List<string> _faculty = new List<string>();
-        public string SingleFacul;
+        private List<string> _courses = new List<string>();
+        private List<int> _years = new List<int>();
+
+        private string _selectedFaculty;
         public List<string> Faculty
         {
             get
@@ -22,11 +25,78 @@ namespace Wiget.ViewModel
                 NotifyPropertyChanged();
             }
         }
+        public string SelectedFaculty
+        {
+            get
+            {
+                return _selectedFaculty;
+            }
+            set
+            {
+                _selectedFaculty = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        private string _selectedCourse;
+        public List<string> Courses
+        {
+            get
+            {
+                return _courses;
+            }
+            set
+            {
+                _courses = value;
+                NotifyPropertyChanged();
+            }
+        }
+        public string SelectedCourse
+        {
+            get
+            {
+                return _selectedCourse;
+            }
+            set
+            {
+                _selectedCourse = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        private string _selectedYear;
+        public List<int> Years
+        {
+            get
+            {
+                return _years;
+            }
+            set
+            {
+                _years = value;
+                NotifyPropertyChanged();
+            }
+        }
+        public string SelectedYear
+        {
+            get
+            {
+                return _selectedYear;
+            }
+            set
+            {
+                _selectedYear = value;
+                NotifyPropertyChanged();
+            }
+        }
+
 
 
         public DetailsViewModel()
         {
-            Faculty = new List<string>(); 
+            Faculty = new List<string>();
+            Years = new List<int>();
+            Courses = new List<string>();
             Faculty.Add("AEiI");
             Faculty.Add("IB");
         }

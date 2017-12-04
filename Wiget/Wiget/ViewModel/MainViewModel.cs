@@ -108,9 +108,10 @@ namespace Wiget.ViewModel
         {
             if (GroupViewEnabled == true)
             {
+                GroupViewEnabled = false;
                 DetailsViewEnabled = true;
                 PlanViewEnabled = false;
-                GroupViewEnabled = false;
+                
             }
            
         }
