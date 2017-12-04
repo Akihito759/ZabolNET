@@ -42,6 +42,13 @@ namespace ZabolNET.Controllers
             return View();
         }
 
+        //GET Intro/chooseFaculty
+        public ActionResult ChooseFaculty()
+        {
+            var _facLIst = db.Faculties.Select(x => x.FacultyName).ToList();
+            return PartialView("~/Views/Intro/_ChooseFaculty.cshtml", _facLIst);
+        }
+
         // POST: Faculties/Create
         // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
         // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
