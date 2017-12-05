@@ -15,6 +15,7 @@
                       ShowMinButton="False"
                       ShowMaxRestoreButton="False"
         ResizeMode="NoResize"
+                      Background="AliceBlue"
                       >
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0" ResizeBorderThickness="5"/>
@@ -25,6 +26,10 @@
     <Window.Resources>
         <local:BooleanToCollapsedConverter x:Key="VisibilityConv"/>
     </Window.Resources>
+
+
+    
+
 
     <Grid >
         <Grid.RowDefinitions>
@@ -40,17 +45,17 @@
 
         <Grid  Grid.Row="1" Width="auto" Visibility="{Binding DetailsViewEnabled,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay,Converter={StaticResource VisibilityConv}}"  IsEnabled="{Binding DetailsViewEnabled}">
             <Viewbox Stretch="Uniform" StretchDirection="Both">
-                <Views:DetailsView Width="200" Height="100"/>
+                <Views:DetailsView Width="200" Height="100" Background="Transparent"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="1" Visibility="{Binding GroupViewEnabled,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay,Converter={StaticResource VisibilityConv}}"  >
             
-                <Views:GroupPickView Width="auto" Height="auto"/>
+                <Views:GroupPickView Width="auto" Height="auto" Background="Transparent"/>
             
         </Grid>
         <Grid Grid.Row="1" Visibility="{Binding PlanViewEnabled,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay, Converter={StaticResource VisibilityConv}}" >
             <Viewbox>
-                <Views:PlanView Width="auto" Height="auto"/>
+                <Views:PlanView Width="auto" Height="auto" Background="Transparent"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="2" Visibility="{Binding IsButtonVisible,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource VisibilityConv}}">

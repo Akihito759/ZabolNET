@@ -48,7 +48,7 @@ namespace Wiget.ViewModel
                 LongDesc = "Przerąbane, punkty ujemne, nie mamy materiałów z zeszłych lat",
                 Name = "Teoria obwodów cyfrowych",
                 RecordType = "Kolokwium",
-                ShortDesc = "Kolos - punkty ujemne, tragedia"
+                ShortDesc = "Punkty ujemne, tragedia"
             });
             TommorowSubjects.Add(new Subject
             {
@@ -56,7 +56,7 @@ namespace Wiget.ViewModel
                 LongDesc = "Wejściówka z podstaw programowania, nic trudnego, wystarczy poczytać trochę o polimofizmie i predykatach, materiały są na dysku roku",
                 Name = "Programowanie obiektowe",
                 RecordType = "Wejściówka",
-                ShortDesc = "Wejściówka - nic trudnego"
+                ShortDesc = "Nic trudnego"
             });
         }
 

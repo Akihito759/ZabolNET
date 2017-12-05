@@ -15,8 +15,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="CO NA JUTRO!!!!!!!!" Foreground="#D53736" Width="auto" FontSize="10" Height="20" Margin="2" FontWeight="Bold" TextAlignment="Center"/>
-        <ListBox ItemsSource="{Binding TodaySubjects, Mode=TwoWay}" Grid.Column="0" Grid.Row="1"  BorderThickness="0" Height="70" Width="200" HorizontalAlignment="Center" Focusable="False">
+        <TextBlock Grid.Row="0" Text="CO NA JUTRO!!!!!!!!"  Foreground="#D53736" Width="auto" FontSize="10" Height="20" Margin="2" FontWeight="Bold" TextAlignment="Center"/>
+        <ListBox ItemsSource="{Binding TodaySubjects, Mode=TwoWay}" Background="Transparent" Grid.Column="0" Grid.Row="1"  BorderThickness="0" Height="70" Width="200" HorizontalAlignment="Center" Focusable="False">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid >
@@ -25,7 +25,7 @@
                             <TextBlock Grid.Column="1" Text="{Binding RecordType}"  VerticalAlignment="Center"  TextWrapping="Wrap"/>
                             <TextBlock Grid.Column="1" Text="{Binding ShortDesc}"  VerticalAlignment="Center" TextWrapping="Wrap"/>
                             <!--<TextBlock Grid.Column="1" Text="{Binding LongDesc}" Margin="0,-1,5,0" VerticalAlignment="Center" TextWrapping="Wrap"/>-->
-                            <TextBlock Grid.Column="1" Text="{Binding Diff}"  VerticalAlignment="Center" TextWrapping="Wrap"/>
+                            <TextBlock Grid.Column="1" Text="{Binding DiffVer2}"  VerticalAlignment="Center" TextWrapping="Wrap"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
@@ -38,7 +38,7 @@
         </ListBox>
         <TextBlock Grid.Row="2" Text="CO NA DZIŚ!!!!!!!!" Foreground="#D53736" Width="auto" FontSize="10" TextWrapping="WrapWithOverflow" Height="20" Margin="2" FontWeight="Bold" TextAlignment="Center"/>
 
-        <ListBox ItemsSource="{Binding TommorowSubjects, Mode=TwoWay}" Grid.Column="0" Grid.Row="3"  HorizontalAlignment="Center" BorderThickness="0" Height="70" Width="200" Focusable="False">
+        <ListBox ItemsSource="{Binding TommorowSubjects, Mode=TwoWay}" Background="Transparent" Grid.Column="0" Grid.Row="3"  HorizontalAlignment="Center" BorderThickness="0" Height="70" Width="200" Focusable="False">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -47,7 +47,7 @@
                             <TextBlock Grid.Column="1" Text="{Binding RecordType}" Margin="0,-1,5,0" VerticalAlignment="Center"/>
                             <TextBlock Grid.Column="1" Text="{Binding ShortDesc}" Margin="0,-1,5,0" VerticalAlignment="Center"/>
                             <!--<TextBlock Grid.Column="1" Text="{Binding LongDesc}" Margin="0,-1,5,0" VerticalAlignment="Center"/>-->
-                            <TextBlock Grid.Column="1" Text="{Binding Diff}" Margin="0,-1,5,0" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Text="{Binding DiffVer2}" Margin="0,-1,5,0" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

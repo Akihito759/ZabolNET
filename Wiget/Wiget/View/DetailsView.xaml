@@ -9,7 +9,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
 
   
-    <Grid ShowGridLines="True">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>

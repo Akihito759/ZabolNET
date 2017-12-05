@@ -23,6 +23,7 @@ namespace Wiget.ViewModel
         private string _faculty = string.Empty;
         private string _chosenGroup = string.Empty;
 
+
         private int _year = 0;
         private ObservableCollection<Subject> _todaySubjects;
         private ObservableCollection<Subject> _tommorowSubjects;
@@ -218,12 +219,12 @@ namespace Wiget.ViewModel
         {
             bool mama = false;
 
-            if (!string.IsNullOrEmpty(Faculty) && !string.IsNullOrEmpty(Course) && Year != 0)
+            if (!string.IsNullOrEmpty(Faculty) && !string.IsNullOrEmpty(Course) && Year != 0 && _detailsViewEnabled == true)
             {
                 
                 return true;
             }
-            if (!string.IsNullOrEmpty(ChosenGroup))
+            if (!string.IsNullOrEmpty(ChosenGroup) && _groupViewEnabled == true && _detailsViewEnabled == false)
             {
                 return true;
             }
