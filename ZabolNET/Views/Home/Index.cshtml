@@ -35,10 +35,29 @@
 
         </ul>
     </div>
-        <button id="OMG" class="testowy"></button>
+        <button  id ="guzik" class="button" href="@Url.Action("Choose","Home")">Przejdź do swojej grupy &#8611;</button>
     </div>
     <div class="col-sm-1"></div>
-
+        <form action="/Home/GetViewModel" id="chuj" method="post"><input id="Course" name="Course" type="hidden" value=""><input id="Faculty" name="Faculty" type="hidden" value=""><input id="Group" name="Group" type="hidden" value=""><input data-val="true" data-val-number="The field Year must be a number." data-val-required="Pole Year jest wymagane." id="Year" name="Year" type="hidden" value="0">                <ul style="list-style-type: none;">
     </div>
 </div>
+
+<script type="text/javascript">
+    $("#guzik").click(function (e) {
+        e.preventDefault();
+        if (localStorage.getItem("Year") != null)
+        {
+            $("#Faculty").val(localStorage.getItem("Faculty"));
+            $("#Course").val(localStorage.getItem("Course"));
+            $("#Year").val(localStorage.getItem("Year"));
+            $("#Group").val(localStorage.getItem("Group"));
+            $("#chuj").submit();
+        }
+        else {
+            window.location.href = "@Url.Action("Choose","Home")";
+        }
+
+    });
+
+</script>
 

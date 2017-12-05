@@ -1,0 +1,18 @@
+﻿@model ZabolNET.ViewModels.ChooseViewModel
+
+
+
+@using (Html.BeginForm("addEvent", "Home", FormMethod.Post))
+{
+   <h3 class="text"></h3> @Html.HiddenFor(m => m.Faculty); 
+    @Html.HiddenFor(m => m.Course);
+    @Html.HiddenFor(m => m.Year);
+    @Html.HiddenFor(m => m.Group);
+    <button type="submit" class="btn btn-default">Dodaj zadanie</button>
+}
+
+
+@{Html.RenderAction("GetRecords", "Home", Model);}
+
+
+
