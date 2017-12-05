@@ -24,7 +24,7 @@ namespace Wiget.View
         public PlanView()
         {
             InitializeComponent();
-           // DataContext = new DetailsViewModel();
+            DataContext = new PlanViewModel();
         }
     }
 }

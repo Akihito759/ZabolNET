@@ -5,17 +5,59 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Wiget.View"
              mc:Ignorable="d" 
+           
              >
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <DataGrid Grid.Column="0" >
-            
-        </DataGrid>
-        <DataGrid Grid.Column="1" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        </DataGrid>
+        <TextBlock Grid.Row="0" Text="CO NA JUTRO!!!!!!!!" Foreground="#D53736" Width="auto" FontSize="10" Height="20" Margin="2" FontWeight="Bold" TextAlignment="Center"/>
+        <ListBox ItemsSource="{Binding TodaySubjects, Mode=TwoWay}" Grid.Column="0" Grid.Row="1"  BorderThickness="0" Height="70" Width="200" HorizontalAlignment="Center" Focusable="False">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid >
+                        <StackPanel Orientation="Vertical">
+                        <TextBlock Grid.Column="1" Text="{Binding Name}" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                            <TextBlock Grid.Column="1" Text="{Binding RecordType}"  VerticalAlignment="Center"  TextWrapping="Wrap"/>
+                            <TextBlock Grid.Column="1" Text="{Binding ShortDesc}"  VerticalAlignment="Center" TextWrapping="Wrap"/>
+                            <!--<TextBlock Grid.Column="1" Text="{Binding LongDesc}" Margin="0,-1,5,0" VerticalAlignment="Center" TextWrapping="Wrap"/>-->
+                            <TextBlock Grid.Column="1" Text="{Binding Diff}"  VerticalAlignment="Center" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemContainerStyle>
+            <Style TargetType="Control">
+                <Setter Property="Focusable" Value="False" />
+            </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+        <TextBlock Grid.Row="2" Text="CO NA DZIŚ!!!!!!!!" Foreground="#D53736" Width="auto" FontSize="10" TextWrapping="WrapWithOverflow" Height="20" Margin="2" FontWeight="Bold" TextAlignment="Center"/>
+
+        <ListBox ItemsSource="{Binding TommorowSubjects, Mode=TwoWay}" Grid.Column="0" Grid.Row="3"  HorizontalAlignment="Center" BorderThickness="0" Height="70" Width="200" Focusable="False">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Grid.Column="1" Text="{Binding Name}" Margin="0,-1,5,0" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Text="{Binding RecordType}" Margin="0,-1,5,0" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Text="{Binding ShortDesc}" Margin="0,-1,5,0" VerticalAlignment="Center"/>
+                            <!--<TextBlock Grid.Column="1" Text="{Binding LongDesc}" Margin="0,-1,5,0" VerticalAlignment="Center"/>-->
+                            <TextBlock Grid.Column="1" Text="{Binding Diff}" Margin="0,-1,5,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="Control">
+                    <Setter Property="Focusable" Value="False" />
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+     
     </Grid>
 </UserControl>

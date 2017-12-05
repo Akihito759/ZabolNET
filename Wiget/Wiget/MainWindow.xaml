@@ -26,7 +26,7 @@
         <local:BooleanToCollapsedConverter x:Key="VisibilityConv"/>
     </Window.Resources>
 
-    <Grid ShowGridLines="True">
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
@@ -50,7 +50,7 @@
         </Grid>
         <Grid Grid.Row="1" Visibility="{Binding PlanViewEnabled,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay, Converter={StaticResource VisibilityConv}}" >
             <Viewbox>
-                <Views:PlanView />
+                <Views:PlanView Width="auto" Height="auto"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="2" Visibility="{Binding IsButtonVisible,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource VisibilityConv}}">

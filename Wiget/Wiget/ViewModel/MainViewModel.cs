@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,38 @@ namespace Wiget.ViewModel
         private bool _isButtonVisible = true;
         private string _course = string.Empty;
         private string _faculty = string.Empty;
-        private int _year = 0;
+        private string _chosenGroup = string.Empty;
 
-      
+        private int _year = 0;
+        private ObservableCollection<Subject> _todaySubjects;
+        private ObservableCollection<Subject> _tommorowSubjects;
+
+        public ObservableCollection<Subject> TodaySubjects
+        {
+            get
+            {
+                return _todaySubjects;
+            }
+            set
+            {
+                _todaySubjects = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public ObservableCollection<Subject> TommorowSubjects
+        {
+            get
+            {
+                return _tommorowSubjects;
+            }
+            set
+            {
+                _tommorowSubjects = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         public ICommand NextCommand { get; set; }
         public ICommand PreviousCommand { get; set; }
         public ICommand ExitCommand { get; set; }
@@ -60,6 +90,18 @@ namespace Wiget.ViewModel
             set
             {
                 _year = value;
+                NotifyPropertyChanged();
+            }
+        }
+        public string ChosenGroup
+        {
+            get
+            {
+                return _chosenGroup;
+            }
+            set
+            {
+                _chosenGroup = value;
                 NotifyPropertyChanged();
             }
         }
@@ -148,9 +190,11 @@ namespace Wiget.ViewModel
             NextCommand = new RelayCommand(ExecuteNext, CanExecuteNext);
             PreviousCommand = new RelayCommand(ExecutePrevious, CanExecutePrevious);
             ExitCommand = new RelayCommand(ExecuteExit, CanExecuteExit);
+          
             _aggregator.GetEvent<SendInfoToGetGroupFaculty>().Subscribe(item => { Faculty = item; });
             _aggregator.GetEvent<SendInfoToGetGroupCourse>().Subscribe(item => { Course = item; });
             _aggregator.GetEvent<SendInfoToGetGroupYear>().Subscribe(item => { Year = item; });
+            _aggregator.GetEvent<SendChosenGroup>().Subscribe(item => { ChosenGroup = item; });
 
         }
 
@@ -172,8 +216,17 @@ namespace Wiget.ViewModel
         }
         public bool CanExecuteNext(object p)
         {
-            if (!string.IsNullOrEmpty(Faculty) && !string.IsNullOrEmpty(Course) && Year != 0  )
+            bool mama = false;
+
+            if (!string.IsNullOrEmpty(Faculty) && !string.IsNullOrEmpty(Course) && Year != 0)
+            {
+                
                 return true;
+            }
+            if (!string.IsNullOrEmpty(ChosenGroup))
+            {
+                return true;
+            }
             else
                 return false;
         }

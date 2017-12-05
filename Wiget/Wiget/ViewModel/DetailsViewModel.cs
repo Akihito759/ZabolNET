@@ -11,13 +11,13 @@ namespace Wiget.ViewModel
 {
     public class DetailsViewModel:BaseViewModel
     {
-        private List<string> _faculty = new List<string>();
+        private ObservableCollection<string> _faculty = new ObservableCollection<string>();
         private ObservableCollection<string> _courses = new ObservableCollection<string>();
         private List<int> _years = new List<int>();
 
         
         private string _selectedFaculty;
-        public List<string> Faculty
+        public ObservableCollection<string> Faculty
         {
             get
             {
@@ -38,7 +38,6 @@ namespace Wiget.ViewModel
             set
             {
                 _selectedFaculty = value;
-                
                 _aggregator.GetEvent<SendInfoToGetGroupFaculty>().Publish(SelectedFaculty);
                 if (SelectedFaculty == "AEiI")
                 {
@@ -88,7 +87,7 @@ namespace Wiget.ViewModel
                 _selectedCourse = value;
                 _aggregator.GetEvent<SendInfoToGetGroupCourse>().Publish(SelectedCourse);
                 
-               
+                
                 Years.Add(2017);
                 Years.Add(2016);
                 Years.Add(2015);
@@ -127,7 +126,7 @@ namespace Wiget.ViewModel
 
         public DetailsViewModel()
         {
-            Faculty = new List<string>();
+            Faculty = new ObservableCollection<string>();
             Years = new List<int>();
             Courses = new ObservableCollection<string>();
             Faculty.Add("AEiI");

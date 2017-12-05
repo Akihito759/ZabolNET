@@ -12,7 +12,7 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.RowSpan="2" Text="Wybierz swoją grupę" Foreground="#D53736" Width="auto" FontSize="40" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
-        <ComboBox Grid.Row="2" Width="100" Height="40"/>
+        <TextBlock Grid.Row="0" Grid.RowSpan="2" Text="Wybierz swoją grupę" Foreground="#D53736" Width="auto" FontSize="40" FontWeight="Bold" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
+        <ComboBox Grid.Row="2" Width="100" Height="40" SelectedItem="{Binding SelectedElement}" ItemsSource="{Binding ListOfGroups}"/>
     </Grid>
 </UserControl>
