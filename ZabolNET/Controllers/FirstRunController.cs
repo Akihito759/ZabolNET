@@ -77,7 +77,7 @@ namespace ZabolNET.Controllers
 
             viewModel.ToChoose = courseList;
 
-            return PartialView("~/Views/Intro/_Final.cshtml");
+            return PartialView("~/Views/Intro/_Final.cshtml",viewModel);
         }
     }
 }

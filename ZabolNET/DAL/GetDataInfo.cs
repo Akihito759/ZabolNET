@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using ZabolNET.Models;
+using ZabolNET.ViewModels;
 
 namespace ZabolNET.DAL
 {
@@ -63,6 +64,23 @@ namespace ZabolNET.DAL
                 .First().ToList();
 
             return years;
+        }
+
+        public int GetSubjectID(Year Year, string SubjectName)
+        {
+            return Year.Subject.First(x => x.SubjectName == SubjectName).SubjectID;
+        }
+
+        public void AddRecord(ChooseViewModel viewModel, Record record, string SubjectName)
+        {
+            var groups = GetGroup(viewModel.Year, viewModel.Course, viewModel.Faculty);
+            var group = groups.First(x => x.GroupName == viewModel.Group);
+            var years = GetYear(viewModel.Course, viewModel.Faculty);
+            var year = years.First(x => x.StartYear == viewModel.Year);
+            record.GroupID = group.GroupID;
+            record.SubjectID = GetSubjectID(year, SubjectName);
+            db.Records.Add(record);
+            db.SaveChanges();
         }
     }
 }

@@ -1,4 +1,75 @@
 ﻿@model ZabolNET.ViewModels.ChooseViewModel
 
+@*<link href="~/Content/Site.css" rel="stylesheet" />*@
 
-<h1>Rejestraja przebiegła pomyślnie twoje wybory to</h1>
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <h2 style="margin: 30px;text-align:center; animation: ease-in" class="TextStyle">Twoje wybory zostały poprawnie zapisane</h2>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-3"> </div>
+    <div class="col-sm-6" style="text-align:center;">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="TextStyle">Wydział</h3>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="TextStyle"style="color:green">@Model.Faculty</h3>
+            </div>
+        </div><br/>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="TextStyle">Kierunek</h3>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="TextStyle" style="color:green">@Model.Course</h3>
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="TextStyle">Rok</h3>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="TextStyle" style="color:green">@Model.Year.ToString()</h3>
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="TextStyle">Grupa</h3>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="TextStyle" style="color:green">@Model.Group</h3>
+            </div>
+        </div><br />
+    </div>
+    <div class="col-sm-3"> </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-5"></div>
+    <div class="col-sm-2"><button id="Save" class="btn btn-default">Zapisz</button></div>
+    <div class="col-sm-5"></div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+
+    $("#Save").click(function (e) {
+
+        localStorage.setItem("Faculty", "@Model.Faculty");
+        localStorage.setItem("Course", "@Model.Course");
+        localStorage.setItem("Year", "@Model.Year");
+        localStorage.setItem("Group", "@Model.Group");
+        window.location.href = "@Url.Action("Index","Home")";
+    });
+</script>
+
+

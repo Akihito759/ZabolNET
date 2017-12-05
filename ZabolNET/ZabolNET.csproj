@@ -352,6 +352,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Intro\_ChooseGroup.cshtml" />
     <Content Include="Views\Intro\_Final.cshtml" />
+    <Content Include="Views\Home\MainView.cshtml" />
+    <Content Include="Views\_Show.cshtml" />
     <None Include="_ZabolNETContext_20171204113926DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>_ZabolNETContext_20171204113926DataSet.Designer.cs</LastGenOutput>

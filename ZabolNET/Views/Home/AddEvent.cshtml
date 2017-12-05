@@ -1,7 +1,4 @@
-﻿
-@{
-    ViewBag.Title = "AddEvent";
-}
+﻿@model ZabolNET.ViewModels.ChooseViewModel
 
 <div class="row">
     <div class="col-sm-4"></div>
@@ -13,56 +10,62 @@
 
 
 <div class="row">
-    <div class="col-sm-3"></div>
+    <div class="col-sm-1"></div>
+    @using (Html.BeginForm("PostEvent", "Home", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.Faculty);
+        @Html.HiddenFor(m => m.Course);
+        @Html.HiddenFor(m => m.Year);
+        @Html.HiddenFor(m => m.Group);
 
-    <div class="col-sm-6">
+
+    <div class="col-sm-10">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 <b><h4 class="TextStyle">Przedmiot</h4></b>
             </div>
-            <div class="col-sm-8">
-                <select class="form-control" id="sel1">
-                    <option value="" disabled selected>Wybierz przedmiot</option>
-                    <option>Podstawy automatyki</option>
-                    <option>Dynamika układów</option>
-                    <option>Przetwrzanie cyfrowe obrazów</option>
-                    <option>4</option>
+            <div class="col-sm-6">
+                <select class="form-control" id="sel1" name="SubjectID">
+                    <option value="33" disabled selected>Wybierz przedmiot</option>
+                    <option value="33">Podstawy automatyki</option>
+                    <option value="33">Dynamika układów</option>
+                    <option value="33">Przetwrzanie cyfrowe obrazów</option> 
                 </select>
             </div>
         </div><br />
 
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 <b><h4 class="TextStyle">Data</h4></b>
             </div>
-            <div class="col-sm-8">
-                DATA PICKER
+            <div class="col-sm-6">
+               <input  type="text" class="form-control" name="RecordDate" value="05.12.2017 00:00:00"/>
             </div>
         </div><br />
 
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 <b><h4 class="TextStyle">Krótki opis</h4></b>
             </div>
-            <div class="col-sm-8">
-                <textarea class="form-control" id="comment" style="max-width: 100%; width:99%;" maxlength="80" placeholder="Dodaj krótki opis..."></textarea>
+            <div class="col-sm-6">
+                <textarea class="form-control" id="comment" style="max-width: 100%; width:99%;" maxlength="80" name="ShortDescription" placeholder="Dodaj krótki opis..."></textarea>
             </div>
         </div><br />
 
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 <b><h4 class="TextStyle">Wybierz</h4></b>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-6">
                 <div class="row">
                     <div class="col-sm-6">
-                        <label style="font-size: x-large;"><input type="checkbox" value="" style="zoom: 1.5;">Kartkówka</label><br />
-                        <label style="font-size: x-large;"><input type="checkbox" value="" style="zoom: 1.5;">Kolokwium</label><br />
-                        <label style="font-size: x-large;"><input type="checkbox" value="" style="zoom: 1.5;">Egzamin</label><br />
+                        <label style="font-size: x-large;"><input name="RecordType" type="radio" value="Kartówka" style="zoom: 1.5;">Kartkówka</label><br />
+                        <label style="font-size: x-large;"><input name="RecordType" type="radio" value="Kolowkium" style="zoom: 1.5;">Kolokwium</label><br />
+                        <label style="font-size: x-large;"><input name="RecordType" type="radio" value="Egzamin" style="zoom: 1.5;">Egzamin</label><br />
                     </div>
                     <div class="col-sm-6">
-                        <label style="font-size: x-large;"><input type="checkbox" value="" style="zoom: 1.5;">Wejściówka</label><br />
-                        <label style="font-size: x-large;"><input type="checkbox" value="" style="zoom: 1.5;">Zadanie</label><br />
+                        <label style="font-size: x-large;"><input name="RecordType" type="radio" value="Wejściówka" style="zoom: 1.5;">Wejściówka</label><br />
+                        <label style="font-size: x-large;"><input name="RecordType" type="radio" value="Zadanie" style="zoom: 1.5;">Zadanie</label><br />
                     </div>
                 </div>
 
@@ -70,17 +73,17 @@
         </div><br />
 
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 <b><h4 class="TextStyle">Trudność</h4></b>
             </div>
-            <div class="col-sm-8">
-                <select class="form-control" id="sel1">
+            <div class="col-sm-6">
+                <select class="form-control" id="sel1" name="Difficulty">
                     <option value="" disabled selected>Wybierz trudność</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                 </select>
             </div>
         </div><br />
@@ -90,17 +93,17 @@
                 <b><h4 class="TextStyle">Opis</h4></b>
             </div>
             <div class="col-sm-8">
-                <textarea class="form-control" id="comment" rows="10" style="max-width: 100%; width:99%;"  placeholder="Dodaj krótki opis..."></textarea>
+                <textarea class="form-control" id="comment" rows="10" style="max-width: 100%; width:99%;"  placeholder="Dodaj krótki opis..." name="Description"></textarea>
             </div>
         </div><br />
 
-
-
+        <button class="btn btn-default" type="submit">Dodaj</button>
 
 
     </div>
 
-    <div class="col-sm-3"></div>
+    }
+    <div class="col-sm-1"></div>
 </div>
 
 
