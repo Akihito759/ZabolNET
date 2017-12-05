@@ -37,6 +37,7 @@ namespace Wiget.ViewModel
             }
             set
             {
+
                 _selectedFaculty = value;
                 _aggregator.GetEvent<SendInfoToGetGroupFaculty>().Publish(SelectedFaculty);
                 if (SelectedFaculty == "AEiI")
@@ -86,11 +87,11 @@ namespace Wiget.ViewModel
             {
                 _selectedCourse = value;
                 _aggregator.GetEvent<SendInfoToGetGroupCourse>().Publish(SelectedCourse);
+                 
                 
-                
-                Years.Add(2017);
-                Years.Add(2016);
                 Years.Add(2015);
+                Years.Add(2016);
+                Years.Add(2017);
                 NotifyPropertyChanged();
             }
         }
@@ -104,6 +105,7 @@ namespace Wiget.ViewModel
             }
             set
             {
+                Years.Clear();
                 _years = value;
                 NotifyPropertyChanged();
             }
