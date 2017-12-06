@@ -6,39 +6,65 @@
 
 
 <div>
-   
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <h1 style="font-weight:900; font-size:100px; font-family:'Comic Sans MS'; color:white;">WeiLei</h1>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+
     <div class="row">
     <div class="col-sm-1"></div>    
     <div class="col-sm-4">
-        <div style="background-color: aqua; margin: 10px; border: solid; margin:10px; padding: 5px; align-content: space-around">
-            <text>
+        <div>
+            <text style="color:white">
                 Witajcie na platformie zrzeszającej oraz pomagającej studentom! Naszym celem było stworzenie aplikacji,
                 która pomoże Wam, studentom, w ciężkich czasach nauki!
             </text>
             </div>
         </div>
     <div class="col-sm-6">
-        <div style="background-color: aqua; margin: 10px; border: solid; margin:10px">
-            <h1 style="text-align: center">Weilei <i class="fa fa-book"></i></h1>
+        <div>
+            <h1 style="text-align: center; font-size:xx-large; color:white;">Co oferujemy ? <i style="color:white;" class="fa fa-book"></i></h1>
             <ul>
-                <li><text>Przejrzysty interfejs</text></li>
-                <li><text>Łatwość użytkowania</text></li>
-                <li><text>Zawsze będziesz wiedział co Cię czeka</text></li>
-                <li><text>Późny powrót z imprezy? Nie musisz szukać informacji po fejsie!</text></li>
+                <li><text style="color:white">Przejrzysty interfejs</text></li>
+                <li><text style="color:white">Łatwość użytkowania</text></li>
+                <li><text style="color:white"> Zawsze będziesz wiedział co Cię czeka</text></li>
+                <li><text style="color:white">Późny powrót z imprezy? Nie musisz szukać informacji po fejsie!</text></li>
             </ul>
         </div>
-    <div  style="background-color: aqua; margin: 10px; border: solid; margin:10px">
-        <h3 style="text-align: center">Autorzy</h3>
-        <ul>
-            <li><text>Grzegorz Gruby Cudok</text></li>
-            <li><text>inni</text></li>
+    <div>
+        <h1 style="text-align: center; font-size:xx-large; color:white;">
+            Autorzy</h1>
+            <ul>
+                <li><text style="color:white">Grzegorz "Aki" Cudok</text></li>
+                <li><text style="color:white">Damian "Darek" Otto</text></li>
+                <li><text style="color:white">Kuba "MistGun" Barczyk</text></li>
+                <li><text style="color:white">Dawid "db" Barański</text></li>
 
-        </ul>
+            </ul>
+        <br/>
+        <br/>
+</div>
+        
+       
     </div>
-        <button  id ="guzik" class="button" href="@Url.Action("Choose","Home")">Przejdź do swojej grupy &#8611;</button>
-    </div>
+        <br />
+        <br />
     <div class="col-sm-1"></div>
         <form action="/Home/GetViewModel" id="chuj" method="post"><input id="Course" name="Course" type="hidden" value=""><input id="Faculty" name="Faculty" type="hidden" value=""><input id="Group" name="Group" type="hidden" value=""><input data-val="true" data-val-number="The field Year must be a number." data-val-required="Pole Year jest wymagane." id="Year" name="Year" type="hidden" value="0">                <ul style="list-style-type: none;">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+        <img style="display:inline" src="~/Images/Weilei.jpg" />
+
+        </div>
+        <div class="col-sm-6">
+            <br/>
+            <button id="guzik" class="button" href="@Url.Action("Choose","Home")">Przejdź do swojej grupy &#8611;</button>
+        </div>
     </div>
 </div>
 

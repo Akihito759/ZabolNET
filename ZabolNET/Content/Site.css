@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 0px;
     padding-bottom: 20px;
+    background-image: url('../Images/bodyphoto.jpg');
+    
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -45,4 +47,12 @@ textarea {
 .TextStyle {
     font-weight: 800;
     font-size: xx-large;
+    color:white;
+
+}
+
+.TextStyle2 {
+    font-weight: 800;
+    font-size: large;
+    color: white;
 }
